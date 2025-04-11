@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import animation
 from IPython.display import HTML
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 # ✅ 1. Sample Data Definition (No Drive Mounting)
 mission_data = {
@@ -62,7 +64,7 @@ conflict_report = check_conflict(primary_drone, simulated_drones)
 
 # ✅ 5. Output Result
 if conflict_report:
-    print("⚠️ Conflict Detected")
+    print("[!] Conflict Detected")
     for c in conflict_report:
         print(f"Conflict with {c['conflict_with']} at {c['location']} at time {c['time']}")
 else:
